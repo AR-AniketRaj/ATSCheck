@@ -17,5 +17,3 @@ module.exports.userVerification = (req, res) => {
     }
   });
 };
-
-module.exports = { userVerification };

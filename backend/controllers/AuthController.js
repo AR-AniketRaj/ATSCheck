@@ -1,4 +1,4 @@
-const User = require("../models/userModel");
+const User = require("../Models/UserModel");
 const { createSecretToken } = require("../util/SecretToken");
 const bcrypt = require("bcryptjs");
 
@@ -46,12 +46,8 @@ module.exports.Login = async (req, res, next) => {
     res
       .status(201)
       .json({ message: "User logged in successfully", success: true });
+    next();
   } catch (error) {
     console.error(error);
   }
 };
-
-// module.exports = {
-//   Signup,
-//   Login,
-// };

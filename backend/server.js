@@ -1,34 +1,34 @@
-require("dotenv").config();
 const express = require("express");
-const connectDB = require("./config/db");
-const authRoutes = require("./routes/AuthRoute");
-const profileRoutes = require("./routes/profile");
-const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
 const cors = require("cors");
-
 const app = express();
+require("dotenv").config();
+const cookieParser = require("cookie-parser");
+const authRoute = require("./Routes/AuthRoute");
+const { MONGO_URL, PORT } = process.env;
 
-app.use(express.json());
-app.use(cookieParser());
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB is  connected successfully"))
+  .catch((err) => console.error(err));
+
 app.use(
   cors({
-    origin: ["http://localhost:5000"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  })
-)
+  }),
+);
+app.use(cookieParser());
 
-connectDB();
+app.use(express.json());
+
+app.use("/", authRoute);
 
 app.get("/", (req, res) => {
-  res.send("ATS Backend Running");
+  res.send("Backend is running successfully");
 });
 
-app.use("/", authRoutes);
-app.use("/profile", profileRoutes);
-
-const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
-  console.log(`Server Running on ${PORT}`);
+  console.log(`Server is listening on port ${PORT}`);
 });
