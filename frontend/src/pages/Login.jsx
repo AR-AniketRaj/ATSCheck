@@ -61,62 +61,49 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <div className="auth-info">
-          <h1 className="auth-logo">⚡ ATSCheck</h1>
+        <div className="auth-header">
+          <h1>ATSCheck</h1>
+        </div>
 
-          <p className="auth-tagline">
-            Improve your resume with AI-powered ATS analysis and insights.
-          </p>
+        <h2>Welcome Back</h2>
 
-          <div className="auth-features">
-            <div className="auth-feature">✓ Instant ATS Score</div>
-            <div className="auth-feature">✓ Resume Keyword Analysis</div>
-            <div className="auth-feature">✓ AI Resume Suggestions</div>
-            <div className="auth-feature">✓ Recruiter-Friendly Reports</div>
+        <p className="auth-subtitle">
+          Login to continue improving your resume with ATSCheck.
+        </p>
+
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={handleOnChange}
+              required
+            />
           </div>
-        </div>
 
-        <div className="auth-form">
-          <h2>Welcome Back</h2>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleOnChange}
+              required
+            />
+          </div>
 
-          <p className="auth-subtitle">
-            Login to continue improving your resume with ATSCheck.
+          <button type="submit">Login</button>
+
+          <p className="auth-link">
+            Don't have an account? <Link to="/signup">Sign Up</Link>
           </p>
+        </form>
 
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Enter your email"
-                onChange={handleOnChange}
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                value={password}
-                placeholder="Enter your password"
-                onChange={handleOnChange}
-                required
-              />
-            </div>
-
-            <button type="submit">Login</button>
-
-            <p className="auth-link">
-              Don't have an account? <Link to="/signup">Sign Up</Link>
-            </p>
-          </form>
-
-          <ToastContainer />
-        </div>
+        <ToastContainer />
       </div>
     </div>
   );
