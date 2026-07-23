@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
