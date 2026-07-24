@@ -5,13 +5,13 @@ import "./Dashboard.css";
 
 function Dashboard() {
   return (
-    <>
+    <div className="dashboard">
       <Navbar />
       <WelcomeSection />
       <div className="upload-container">
         <UploadCard />
       </div>
-    </>
+    </div>
   );
 }
 

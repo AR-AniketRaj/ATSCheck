@@ -2,6 +2,7 @@ import "./UploadCard.css";
 
 function UploadCard() {
   return (
+    <div className="upload-wrapper">
     <div className="upload-card">
       <div className="upload-icon">
         <i className="fa-solid fa-cloud-arrow-up"></i>
@@ -18,6 +19,7 @@ function UploadCard() {
       <div className="upload-info">
         <p>Supports PDF, DOCX • Max file size 5 MB</p>
       </div>
+    </div>
     </div>
   );
 }
