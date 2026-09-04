@@ -23,9 +23,7 @@ const userSchema = new mongoose.Schema({
     default: Date.now,
   },
 
-  // ==========================================
   // Email OTP Verification
-  // ==========================================
 
   isVerified: {
     type: Boolean,
@@ -42,9 +40,7 @@ const userSchema = new mongoose.Schema({
     default: null,
   },
 
-  // ==========================================
   // Forgot Password
-  // ==========================================
 
   resetPasswordToken: {
     type: String,
@@ -57,9 +53,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// ==========================================
 // Hash Password
-// ==========================================
 
 userSchema.pre("save", async function () {
   if (!this.isModified("password")) return;

@@ -13,9 +13,7 @@ const resumeHistoryRoute = require("./Routes/resumeHistoryRoute");
 
 const { PORT } = process.env;
 
-// ==========================================
 // MongoDB
-// ==========================================
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -26,9 +24,7 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-// ==========================================
 // Middleware
-// ==========================================
 
 app.use(
   cors({
@@ -42,9 +38,7 @@ app.use(cookieParser());
 
 app.use(express.json());
 
-// ==========================================
 // Routes
-// ==========================================
 
 app.use("/", authRoute);
 
@@ -52,17 +46,13 @@ app.use("/api/upload", uploadRoute);
 
 app.use("/api/resumes/history", resumeHistoryRoute);
 
-// ==========================================
 // Test
-// ==========================================
 
 app.get("/", (req, res) => {
   res.send("Backend is running successfully");
 });
 
-// ==========================================
 // Server
-// ==========================================
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

@@ -5,9 +5,7 @@ const { userVerification } = require("../middleware/AuthMiddleware");
 
 const router = express.Router();
 
-// ==========================================
 // Get Resume History
-// ==========================================
 
 router.get("/", userVerification, async (req, res) => {
   try {
@@ -31,9 +29,7 @@ router.get("/", userVerification, async (req, res) => {
   }
 });
 
-// ==========================================
 // Get Single Resume Analysis
-// ==========================================
 
 router.get("/:id", userVerification, async (req, res) => {
   try {

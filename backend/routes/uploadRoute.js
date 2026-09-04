@@ -12,9 +12,7 @@ const { userVerification } = require("../middleware/AuthMiddleware");
 
 const router = express.Router();
 
-// ==========================================
 // MULTER STORAGE
-// ==========================================
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -30,9 +28,7 @@ const upload = multer({
   storage,
 });
 
-// ==========================================
 // UPLOAD + ANALYZE RESUME
-// ==========================================
 
 router.post(
   "/",
@@ -73,9 +69,7 @@ router.post(
         jdAnalysis,
       );
 
-      // ==========================================
       // SAVE TO MONGODB
-      // ==========================================
 
       const savedAnalysis = await ResumeAnalysis.create({
         userId: req.userId,
@@ -110,9 +104,7 @@ router.post(
       console.log("ATS SCORE:", analysis.score);
       console.log("=================================");
 
-      // ==========================================
       // RESPONSE
-      // ==========================================
 
       return res.status(201).json({
         success: true,
@@ -153,9 +145,7 @@ router.post(
   },
 );
 
-// ==========================================
 // GET RESUME HISTORY
-// ==========================================
 
 router.get(
   "/history",
@@ -185,9 +175,7 @@ router.get(
   },
 );
 
-// ==========================================
 // TEST ROUTE
-// ==========================================
 
 router.get("/test", (req, res) => {
   res.json({
@@ -196,9 +184,7 @@ router.get("/test", (req, res) => {
   });
 });
 
-// ==========================================
 // GET SINGLE ANALYSIS
-// ==========================================
 
 router.get(
   "/:id",
