@@ -1,0 +1,158 @@
+.history-page {
+  min-height: calc(100vh - 80px);
+  background: #f5f8fc;
+  padding: 60px 7%;
+}
+
+.history-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.history-header h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #0b2a50;
+}
+
+.history-header p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #6380a3;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.history-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #e5ebf3;
+}
+
+.history-info {
+  flex: 1;
+}
+
+.history-info h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  color: #102f55;
+}
+
+.history-info p {
+  margin: 0;
+  color: #71839b;
+}
+
+.history-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.history-score span {
+  font-size: 14px;
+  color: #71839b;
+}
+
+.history-score strong {
+  margin-top: 5px;
+  font-size: 27px;
+  color: #1672f5;
+}
+
+.view-btn {
+  border: none;
+  background: #1672f5;
+  color: white;
+
+  padding: 13px 22px;
+
+  border-radius: 9px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.view-btn:hover {
+  background: #0d5ed7;
+}
+
+.empty-history {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 70px 30px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.empty-history h2 {
+  font-size: 30px;
+  color: #0b2a50;
+}
+
+.empty-history p {
+  color: #6380a3;
+  font-size: 18px;
+}
+
+.empty-history button {
+  margin-top: 20px;
+
+  border: none;
+
+  background: #1672f5;
+  color: white;
+
+  padding: 14px 25px;
+
+  border-radius: 9px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.history-loading {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 20px;
+  color: #6380a3;
+}
+
+.history-error {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 18px;
+
+  text-align: center;
+
+  color: #d32f2f;
+  background: #fff1f1;
+
+  border-radius: 10px;
+}

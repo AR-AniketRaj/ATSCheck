@@ -43,7 +43,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+          navigate("/dashboard");
         }, 1000);
       } else {
         handleError(message);
@@ -94,6 +94,12 @@ const Login = () => {
               onChange={handleOnChange}
               required
             />
+          </div>
+
+          <div className="forgot-password">
+            <button type="button" onClick={() => navigate("/forgot-password")}>
+              Forgot Password?
+            </button>
           </div>
 
           <button type="submit">Login</button>

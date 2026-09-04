@@ -1,0 +1,294 @@
+.analysis-page {
+  min-height: calc(100vh - 80px);
+  background: #f5f8fc;
+  padding: 55px 3%;
+  color: #102f55;
+}
+
+.analysis-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.analysis-header h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.analysis-header p {
+  margin-top: 12px;
+  color: #6380a3;
+  font-size: 20px;
+}
+
+/* SCORE */
+
+.score-card {
+  background: white;
+  border-radius: 22px;
+  padding: 35px 45px;
+  margin-bottom: 40px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.score-card div {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.score-card span {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.score-card strong {
+  font-size: 30px;
+  color: #1672f5;
+}
+
+/* BREAKDOWN */
+
+.breakdown-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+
+  border: 1px solid #e1e8f0;
+
+  margin-bottom: 30px;
+}
+
+.breakdown-card h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.breakdown-grid div {
+  padding: 15px;
+}
+
+.breakdown-grid h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.breakdown-grid strong {
+  font-size: 22px;
+  color: #1672f5;
+}
+
+/* DETAILS */
+
+.details-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.details-card h2 {
+  font-size: 32px;
+  margin-top: 0;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.details-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.details-grid span {
+  color: #71839b;
+}
+
+.details-grid strong {
+  font-size: 25px;
+}
+
+/* CONTENT */
+
+.content-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.content-card h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.content-card p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* SKILLS */
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list span,
+.section-list span {
+  background: #eaf3ff;
+  color: #1672f5;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 15px;
+}
+
+/* NEW ANALYSIS */
+
+.new-analysis-btn {
+  display: block;
+
+  margin: 40px auto;
+
+  border: none;
+
+  background: #1672f5;
+  color: white;
+
+  padding: 16px 30px;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.new-analysis-btn:hover {
+  background: #0d5ed7;
+}
+
+/* LOADING */
+
+.analysis-loading {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f8fc;
+
+  font-size: 22px;
+  color: #6380a3;
+}
+
+/* NO ANALYSIS */
+
+.no-analysis {
+  max-width: 800px;
+
+  margin: 100px auto;
+
+  padding: 70px 30px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+.no-analysis-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.no-analysis h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.no-analysis p {
+  font-size: 20px;
+  color: #6380a3;
+}
+
+.no-analysis button {
+  margin-top: 25px;
+
+  border: none;
+
+  background: #1672f5;
+  color: white;
+
+  padding: 15px 28px;
+
+  border-radius: 10px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .breakdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .analysis-page {
+    padding: 30px 15px;
+  }
+
+  .analysis-header h1 {
+    font-size: 35px;
+  }
+
+  .score-card div {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .score-card span {
+    font-size: 30px;
+  }
+
+  .breakdown-grid,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
