@@ -7,6 +7,8 @@ function VerifyOTP() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const email = location.state?.email || "";
 
   const [otp, setOtp] = useState("");
@@ -33,7 +35,7 @@ function VerifyOTP() {
     try {
       setLoading(true);
 
-      const response = await axios.post("http://localhost:4000/verify-otp", {
+      const response = await axios.post(`${API_URL}/verify-otp`, {
         email,
         otp,
       });

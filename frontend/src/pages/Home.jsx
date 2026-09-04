@@ -7,6 +7,9 @@ import "../styles/home.css";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -15,7 +18,7 @@ const Home = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:4000",
+        `${API_URL}`,
         {},
         { withCredentials: true },
       );

@@ -6,6 +6,8 @@ import "./ForgotPassword.css";
 function ForgotPassword() {
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -26,7 +28,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:4000/forgot-password",
+        `${API_URL}/forgot-password`,
         { email },
         {
           withCredentials: true,

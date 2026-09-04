@@ -10,6 +10,8 @@ const Analysis = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [analysis, setAnalysis] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -26,12 +28,9 @@ const Analysis = () => {
 
   const fetchAnalysis = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/api/upload/${id}`,
-        {
-          withCredentials: true,
-        },
-      );
+      const response = await axios.post(`${API_URL}/api/upload`, formData, {
+        withCredentials: true,
+      });
 
       console.log("Analysis response:", response.data);
 
@@ -200,7 +199,6 @@ const Analysis = () => {
             <p key={index}>✓ {item}</p>
           ))}
         </div>
-
 
         <button
           className="new-analysis-btn"

@@ -7,6 +7,8 @@ import "../styles/auth.css";
 const Signup = () => {
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -40,7 +42,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/signup", {
+      const response = await axios.post(`${API_URL}/signup`, {
         email,
         password,
         username,

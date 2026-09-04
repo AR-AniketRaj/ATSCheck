@@ -7,6 +7,8 @@ function ResetPassword() {
   const { token } = useParams();
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -37,13 +39,10 @@ function ResetPassword() {
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        "http://localhost:4000/reset-password",
-        {
-          token,
-          password,
-        },
-      );
+      const response = await axios.post(`${API_URL}/reset-password`, {
+        token,
+        password,
+      });
 
       if (response.data.success) {
         setMessage(response.data.message);

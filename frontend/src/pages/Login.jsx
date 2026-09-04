@@ -6,6 +6,9 @@ import "../styles/auth.css";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -32,11 +35,13 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        `${API_URL}/login`,
         {
           ...inputValue,
         },
-        { withCredentials: true },
+        {
+          withCredentials: true,
+        },
       );
       console.log(data);
       const { success, message } = data;

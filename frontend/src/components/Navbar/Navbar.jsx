@@ -5,12 +5,14 @@ import "./Navbar.css";
 function Navbar() {
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleLogout = async () => {
     console.log("Logout button clicked");
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/logout",
+        `${API_URL}/logout`,
         {},
         {
           withCredentials: true,

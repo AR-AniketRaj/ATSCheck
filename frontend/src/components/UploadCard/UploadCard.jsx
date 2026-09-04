@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 function UploadCard() {
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const fileInputRef = useRef(null);
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -13,9 +15,7 @@ function UploadCard() {
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
 
-
   // Validate File
-
 
   const validateFile = (file) => {
     const allowedTypes = ["application/pdf"];
@@ -42,9 +42,7 @@ function UploadCard() {
     return true;
   };
 
-
   // File Input
- 
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -52,9 +50,7 @@ function UploadCard() {
     validateFile(file);
   };
 
-
   // Drag Over
-  
 
   const handleDragOver = (event) => {
     event.preventDefault();
@@ -106,13 +102,9 @@ function UploadCard() {
       setIsUploading(true);
       setError("");
 
-      const response = await axios.post(
-        "http://localhost:4000/api/upload",
-        formData,
-        {
-          withCredentials: true,
-        },
-      );
+      const response = await axios.post(`${API_URL}/api/upload`, formData, {
+        withCredentials: true,
+      });
 
       console.log("UPLOAD RESPONSE:", response.data);
 

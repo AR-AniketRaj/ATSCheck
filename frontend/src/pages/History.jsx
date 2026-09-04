@@ -7,6 +7,8 @@ import "./History.css";
 const History = () => {
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -17,12 +19,9 @@ const History = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:4000/api/upload/history",
-        {
-          withCredentials: true,
-        },
-      );
+      const response = await axios.get(`${API_URL}/api/upload/history`, {
+        withCredentials: true,
+      });
 
       console.log("History response:", response.data);
 
