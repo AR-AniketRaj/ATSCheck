@@ -7,9 +7,9 @@ const app = express();
 
 require("dotenv").config();
 
-const authRoute = require("./Routes/AuthRoute");
-const uploadRoute = require("./Routes/uploadRoute");
-const resumeHistoryRoute = require("./Routes/resumeHistoryRoute");
+const authRoute = require("./routes/AuthRoute");
+const uploadRoute = require("./routes/uploadRoute");
+const resumeHistoryRoute = require("./routes/resumeHistoryRoute");
 
 const { PORT } = process.env;
 
