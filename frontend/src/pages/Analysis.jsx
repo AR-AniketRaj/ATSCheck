@@ -28,7 +28,7 @@ const Analysis = () => {
 
   const fetchAnalysis = async () => {
     try {
-      const response = await axios.post(`${API_URL}/api/upload`, formData, {
+      const response = await axios.get(`${API_URL}/api/upload/${id}`, {
         withCredentials: true,
       });
 
