@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@getbrevo/brevo": "^6.0.3",
     "@google/generative-ai": "^0.24.1",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
@@ -22,9 +23,9 @@
     "jsonwebtoken": "^9.0.3",
     "mammoth": "^1.12.0",
     "mongoose": "^9.6.3",
-    "multer": "^2.1.1",
-    "nodemailer": "^8.0.10",
-    "pdf-parse": "^2.4.5"
+    "multer": "^2.2.0",
+    "nodemailer": "^8.0.11",
+    "pdfjs-dist": "^6.2.108"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
