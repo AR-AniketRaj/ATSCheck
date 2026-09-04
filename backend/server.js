@@ -11,7 +11,7 @@ const authRoute = require("./routes/AuthRoute");
 const uploadRoute = require("./routes/uploadRoute");
 const resumeHistoryRoute = require("./routes/resumeHistoryRoute");
 
-const { PORT } = process.env;
+const PORT = process.env.PORT || 4000;
 
 // MongoDB
 
@@ -28,7 +28,11 @@ mongoose
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://ats-check-two.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
