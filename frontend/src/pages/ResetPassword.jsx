@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import "./ResetPassword.css";
 
 function ResetPassword() {
-  const { token } = useParams();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get("token");
+
   const navigate = useNavigate();
 
   const API_URL = import.meta.env.VITE_API_URL;
@@ -20,6 +22,11 @@ function ResetPassword() {
 
     setMessage("");
     setError("");
+
+    if (!token) {
+      setError("Invalid or missing reset token.");
+      return;
+    }
 
     if (!password || !confirmPassword) {
       setError("Please fill in both password fields.");
